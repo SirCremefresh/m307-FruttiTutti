@@ -26,6 +26,8 @@
 | lastname               | varchar(255)   | True      | False         | False           |
 | email                  | varchar(255)   | True      | False         | False           |
 | phone                  | varchar(255)   | False     | False         | False           |
+| orderDate              | timeStamp      | False     | False         | False           |
+| isDone                 | tinyInt(1)     | False     | False         | False           |
 | fruit_fk 🗝            | varchar(255)   | True      | False         | False           |
 | quantityCategory_fk 🗝 | varchar(255)   | True      | False         | False           |
 
