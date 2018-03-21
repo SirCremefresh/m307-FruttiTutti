@@ -1,7 +1,25 @@
 
-# m307-FruttiTutti
+# m307-FruttiTutti Gruppe 14
+
+### Teammitglieder
+Gian Ott   
+Donato Wolfisberg   
+
+### Projektstart   
+21.03.2018   
+### Projektende    
+28.03.2018   
+
+## Roadmap
+sum Bild von Trello sum    
+   
+## Formulare
 
 
+## Testfälle
+  
+## Validierung
+  
 ## Database FruttiTutti
 ### Table fruit
 | name                   | type           | Not Null  | Primary Key   | Auto Increment  |
