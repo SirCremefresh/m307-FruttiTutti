@@ -44,11 +44,29 @@ class QuantityCategory
 					$resultItem['description'],
 					$resultItem['additionalDays'],
 					$resultItem['totalDays']
-
 				)
 			);
 		}
 		return $quantityCategories;
+	}
+
+	public static function get($id): ?QuantityCategory
+	{
+		$conn = Database::getDbConn();
+		$statement = $conn->prepare('SELECT * FROM quantityCategory WHERE quantityCategoryId = :id');
+		$statement->bindParam('id', $id, PDO::PARAM_INT);
+		$statement->execute();
+		$result = $statement->fetchAll();
+
+		if (sizeof($result) === 0) {
+			return null;
+		}
+		return new QuantityCategory(
+			$result[0]['quantityCategoryId'],
+			$result[0]['description'],
+			$result[0]['additionalDays'],
+			$result[0]['totalDays']
+		);
 	}
 
 }

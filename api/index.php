@@ -17,6 +17,7 @@ $app->add(function ($req, $res, $next) {
 });
 
 require './util/Database.php';
+require './util/ValidationHelper.php';
 
 require './app/model/Fruit.php';
 require './app/model/ParchOrder.php';

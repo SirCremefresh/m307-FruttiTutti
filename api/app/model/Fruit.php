@@ -37,4 +37,27 @@ class Fruit
 		}
 		return $fruits;
 	}
+
+	public static function get($id): ?Fruit
+	{
+		print_r("begin");
+		$conn = Database::getDbConn();
+		$statement = $conn->prepare('SELECT * FROM fruit WHERE fruitId = :id');
+		$statement->bindParam('id', $id, PDO::PARAM_INT);
+		$statement->execute();
+		print_r("begin2");
+
+		$result = $statement->fetchAll();
+		print_r($result);
+
+		if (count($result) === 0) {
+			return null;
+		}
+		print_r("end");
+
+		return new Fruit(
+			$result[0]['fruitId'],
+			$result[0]['name']
+		);
+	}
 }
