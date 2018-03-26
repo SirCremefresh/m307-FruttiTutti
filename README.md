@@ -1,28 +1,31 @@
 # m307-FruttiTutti Gruppe 14
 ## Inhaltsverzeichnis
 
+* [Projekt Informationen](#Informationen) 
 * [Konzeptionierung](#Konzeptionierung)  
   * [Formulare](#Formulare)  
     * [Mockup](#Mockup)  
     * [Formularfelder](#Formularfelder)  
     * [Validierung](#Validierung)  
- * [Datenbank](#Datenbank) 
-   * [Table fruit](#fruit) 
-   * [Table quantityCategory](#quantityCategory) 
-   * [Table parchOrder](#parchOrder) 
- * [Testfälle](#Testfälle)  
- * [Roadmap](#Roadmap)  
+  * [Datenbank](#Datenbank) 
+    * [Table fruit](#fruit) 
+    * [Table quantityCategory](#quantityCategory) 
+    * [Table parchOrder](#parchOrder) 
+  * [Testfälle](#Testfälle)  
+  * [Roadmap](#Roadmap)  
 * [Testbericht](#Testbericht)  
 
-## Projekt Informationen
-### Teammitglieder
+<a name="Informationen"/
+
+# Projekt Informationen
+## Teammitglieder
 Gian Ott   
 Donato Wolfisberg   
 
-### Projektstart   
+## Projektstart   
 21.03.2018   
 
-### Projektende    
+## Projektende    
 28.03.2018   
 
 <a name="Konzeptionierung"/>
