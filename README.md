@@ -15,7 +15,7 @@
   * [Roadmap](#Roadmap)  
 * [Testbericht](#Testbericht)  
 
-<a name="Informationen"/
+<a name="Informationen"/>
 
 # Projekt Informationen
 ## Teammitglieder
