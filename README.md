@@ -1,4 +1,7 @@
 # m307-FruttiTutti Gruppe 14
+## Inhaltsverzeichnis
+[Headers](#headers)  
+
 ## Projekt Informationen
 ### Teammitglieder
 Gian Ott   
@@ -39,6 +42,7 @@ Das Eingabefenster wird in der Dörraufträgeanzeige geöffnet. Es können alle 
 * Menge (quantityCategory description), enthält die ausgewählte Menge als Text
 * Status (isDone), enthält den Status der Bestellung als Boolean
   
+  <a name="headers"/>
 ## Validierung
 * Vorname: nicht leer, nur Buchstaben
 * Nachname: nicht leer, nur Buchstaben
