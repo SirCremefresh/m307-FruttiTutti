@@ -10,17 +10,20 @@ Donato Wolfisberg
 ### Projektende    
 28.03.2018   
 
-## Roadmap
-sum Bild von Trello sum    
-   
+# 1 Konzeptionierung
 ## Formulare
-[bestellung erfassen](https://ninjamock.com/Designer/Workplace/39205742/Page1)
+### Dörr-Aufträge anzeigen
+![Dörr-Aufträge Anzeigen](/images/anzeigen.jpg)
 
-## Testfälle
+### Dörr-Aufträge erfassen
+![Dörr-Aufträge Erfassen](/images/erfassen.jpg)
+
+### Dörr-Aufträge bearbeiten
+![Dörr-Aufträge Bearbeiten](/images/bearbeiten.jpg)
   
 ## Validierung
   
-## Database FruttiTutti
+## Datenbank FruttiTutti
 ### Table fruit
 | name                   | type           | Not Null  | Primary Key   | Auto Increment  |
 | ---------------------- |----------------| --------- | ------------- | --------------- |
@@ -48,4 +51,9 @@ sum Bild von Trello sum
 | isDone                 | tinyInt(1)     | False     | False         | False           |
 | fruit_fk 🗝            | varchar(255)   | True      | False         | False           |
 | quantityCategory_fk 🗝 | varchar(255)   | True      | False         | False           |
+
+## Testfälle
+
+## Roadmap
+sum Bild von Trello sum    
 
