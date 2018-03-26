@@ -39,7 +39,7 @@ export class HomeComponent implements OnInit {
 		}
 	}
 
-	getFruitbyId(id): Fruit {
+	getFruitById(id): Fruit {
 		for (let fruit of this.fruits) {
 			if (fruit.fruitId === id) {
 				return fruit;
@@ -63,7 +63,7 @@ export class HomeComponent implements OnInit {
 					'isOnTime': isOnTime,
 					'forename': parchOrderNotDone.forename,
 					'lastname': parchOrderNotDone.lastname,
-					'fruit': this.getFruitbyId(parchOrderNotDone.fruit_fk).name
+					'fruit': this.getFruitById(parchOrderNotDone.fruit_fk).name
 				}
 			}
 		))
