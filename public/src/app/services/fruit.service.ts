@@ -9,8 +9,8 @@ export class FruitService {
 	constructor(private httpClient: HttpClient) {
 	}
 
-	public async getAll() {
-		return await this.httpClient.get<Fruit>(environment.apiUrl + 'fruit').toPromise();
+	public async getAll(): Promise<Fruit[]> {
+		return await this.httpClient.get<Fruit[]>(environment.apiUrl + 'fruit').toPromise();
 	}
 
 }

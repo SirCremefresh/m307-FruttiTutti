@@ -9,8 +9,8 @@ export class QuantityCategoryService {
 	constructor(private httpClient: HttpClient) {
 	}
 
-	public async getAll() {
-		return await this.httpClient.get<QuantityCategory>(environment.apiUrl + 'quantitycategory').toPromise();
+	public async getAll(): Promise<QuantityCategory[]> {
+		return await this.httpClient.get<QuantityCategory[]>(environment.apiUrl + 'quantitycategory').toPromise();
 	}
 
 }

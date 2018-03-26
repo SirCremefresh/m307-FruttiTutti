@@ -15,7 +15,7 @@ CREATE TABLE quantityCategory (
   quantityCategoryId INT(11) PRIMARY KEY AUTO_INCREMENT,
   description        VARCHAR(255) NOT NULL,
   additionalDays     VARCHAR(255) NOT NULL,
-  totalDays          VARCHAR(255) NOT NULL
+  totalDays          INT(4) NOT NULL
 );
 
 
@@ -72,7 +72,7 @@ INSERT INTO fruit (`name`) VALUES
   ('Zwetschgen');
 
 INSERT INTO quantityCategory (description, additionalDays, totalDays) VALUE
-  ('0-5 kg', '0', '5'),
-  ('5-10 kg', '3', '8'),
-  ('10-15 kg', '7', '12'),
-  ('15-20 kg', '13', '18')
+  ('0-5 kg', '0', 5),
+  ('5-10 kg', '3', 8),
+  ('10-15 kg', '7', 12),
+  ('15-20 kg', '13', 18)

@@ -9,8 +9,8 @@ export class PatchOrderService {
 	constructor(private httpClient: HttpClient) {
 	}
 
-	public async getNotDone() {
-		return await this.httpClient.get<ParchOrder>(environment.apiUrl + 'parchorder/notdone').toPromise();
+	public async getNotDone(): Promise<ParchOrder[]> {
+		return await this.httpClient.get<ParchOrder[]>(environment.apiUrl + 'parchorder/notdone').toPromise();
 	}
 
 }
