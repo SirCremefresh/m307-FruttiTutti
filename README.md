@@ -1,7 +1,18 @@
 # m307-FruttiTutti Gruppe 14
 ## Inhaltsverzeichnis
+
 * [Konzeptionierung](#Konzeptionierung)  
   * [Formulare](#Formulare)  
+    * [Mockup](#Mockup)  
+    * [Formularfelder](#Formularfelder)  
+    * [Validierung](#Validierung)  
+ * [Datenbank](#Datenbank) 
+   * [Table fruit](#fruit) 
+   * [Table quantityCategory](#quantityCategory) 
+   * [Table parchOrder](#parchOrder) 
+ * [Testfälle](#Testfälle)  
+ * [Roadmap](#Roadmap)  
+* [Testbericht](#Testbericht)  
 
 ## Projekt Informationen
 ### Teammitglieder
@@ -15,12 +26,16 @@ Donato Wolfisberg
 28.03.2018   
 
 <a name="Konzeptionierung"/>
+
 # Konzeptionierung
 Die Firma TuttiFrutti möchte die Verwaltung von Dörraufträgen mit einem Webtool vereinfachen. Dabei sollen alle noch nicht fertig verarbeiteten Dörraufträge angezeigt werden. In den Eingabefenstern können neue Aufträge erfasst, und die Daten bereits erfasster Aufträge bearbeitet werden. 
 
 <a name="Formulare"/>
+
 ## Formulare
-<a name="Formulare"/>
+
+<a name="Mockup"/>
+
 ### Mockup
 #### Dörr-Aufträge anzeigen
 Die Anzeige Seite ist die Hauptseite. Hier werden alle Dörrauftröge angezeigt, welche noch nicht abgeschlossen sind. Wird auf "Dörrauftrag erfassen" geklickt, wird ein Eingabefenster geöffnet (Siehe Dörraufträge erfassen). In der Tabelle stehen einige Informationen zum Dörrauftrag sowie dem Kunden. Der Status enthält entweder einen roten Apfel 🍎, um einen Frucht innerhalb der Frist, oder eine braune, verdorbene Frucht 🥔, um eine Frucht ausserhalb der Frist, zu kennzeichnen. Jeder offene Dörrauftrag kann mit einem klick auf "Auftrag bearbeiten" verändert werden, indem ein Eingabefenster geöffnet wird (Siehe Dörraufträge bearbeiten). 
@@ -37,7 +52,8 @@ Das Eingabefenster wird in der Dörraufträgeanzeige geöffnet. Es können alle 
 
 ![Dörr-Aufträge Bearbeiten](/images/bearbeiten.jpg)
 
-<a name="Formulare"/>
+<a name="Formularfelder"/>
+
 ### Formularfelder
 * Vorname (forename), enthält Vorname des Bestellers als Text
 * Nachname (lastname), enthält Nachname des Bestellers als Text
@@ -47,7 +63,8 @@ Das Eingabefenster wird in der Dörraufträgeanzeige geöffnet. Es können alle 
 * Menge (quantityCategory description), enthält die ausgewählte Menge als Text
 * Status (isDone), enthält den Status der Bestellung als Boolean
   
-<a name="Formulare"/>
+<a name="Validierung"/>
+
 ### Validierung
 * Vorname: nicht leer, nur Buchstaben
 * Nachname: nicht leer, nur Buchstaben
@@ -57,14 +74,19 @@ Das Eingabefenster wird in der Dörraufträgeanzeige geöffnet. Es können alle 
 * Menge: nicht leer, keine sonstige Validierung nötig da Auswahl
 * Status: keine Validierung nötig da Checkbox
 
-<a name="Formulare"/>
+<a name="Datenbank"/>
+
 ## Datenbank FruttiTutti
+
+<a name="fruit"/>
+
 ### Table fruit
 | name                   | type           | Not Null  | Primary Key   | Auto Increment  |
 | ---------------------- |----------------| --------- | ------------- | --------------- |
 | fruitId 🔑             | int(11)        | True      | True          | True            |
 | name                   | varchar(255)   | True      | False         | False           |
 
+<a name="quantityCategory"/>
 
 ### Table quantityCategory
 | name                   | type           | Not Null  | Primary Key   | Auto Increment  |
@@ -73,6 +95,8 @@ Das Eingabefenster wird in der Dörraufträgeanzeige geöffnet. Es können alle 
 | description            | varchar(255)   | True      | False         | False           |
 | additionalDays         | varchar(255)   | True      | False         | False           |
 | totalDays              | varchar(255)   | True      | False         | False           |
+
+<a name="parchOrder"/>
 
 ### Table parchOrder
 | name                   | type           | Not Null  | Primary Key   | Auto Increment  |
@@ -87,7 +111,8 @@ Das Eingabefenster wird in der Dörraufträgeanzeige geöffnet. Es können alle 
 | fruit_fk 🗝            | varchar(255)   | True      | False         | False           |
 | quantityCategory_fk 🗝 | varchar(255)   | True      | False         | False           |
 
-<a name="Formulare"/>
+<a name="Testfälle"/>
+
 ## Testfälle
 ```
 GEGEBEN SEI   Ich bin auf der Ansichtsseite
@@ -113,12 +138,14 @@ WENN          ich fertig mit der Bearbeitung bin
 DANN          können die Daten in der Datenbank gespeichert ("Änderungen speichern") oder der Vorgang abgebrochen werden.
 ```
 
-<a name="Formulare"/>
+<a name="Roadmap"/>
+
 ## Roadmap
 ### MO 26.03.2018
 
 ### MI 28.03.2018
 
-<a name="Formulare"/>
+<a name="Testbericht"/>
+
 # Testbericht
 
