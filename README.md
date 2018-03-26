@@ -1,6 +1,7 @@
 # m307-FruttiTutti Gruppe 14
 ## Inhaltsverzeichnis
-[Headers](#headers)  
+* [Konzeptionierung](#Konzeptionierung)  
+  * [Formulare](#Formulare)  
 
 ## Projekt Informationen
 ### Teammitglieder
@@ -13,10 +14,13 @@ Donato Wolfisberg
 ### Projektende    
 28.03.2018   
 
+<a name="Konzeptionierung"/>
 # Konzeptionierung
 Die Firma TuttiFrutti möchte die Verwaltung von Dörraufträgen mit einem Webtool vereinfachen. Dabei sollen alle noch nicht fertig verarbeiteten Dörraufträge angezeigt werden. In den Eingabefenstern können neue Aufträge erfasst, und die Daten bereits erfasster Aufträge bearbeitet werden. 
 
+<a name="Formulare"/>
 ## Formulare
+<a name="Formulare"/>
 ### Mockup
 #### Dörr-Aufträge anzeigen
 Die Anzeige Seite ist die Hauptseite. Hier werden alle Dörrauftröge angezeigt, welche noch nicht abgeschlossen sind. Wird auf "Dörrauftrag erfassen" geklickt, wird ein Eingabefenster geöffnet (Siehe Dörraufträge erfassen). In der Tabelle stehen einige Informationen zum Dörrauftrag sowie dem Kunden. Der Status enthält entweder einen roten Apfel 🍎, um einen Frucht innerhalb der Frist, oder eine braune, verdorbene Frucht 🥔, um eine Frucht ausserhalb der Frist, zu kennzeichnen. Jeder offene Dörrauftrag kann mit einem klick auf "Auftrag bearbeiten" verändert werden, indem ein Eingabefenster geöffnet wird (Siehe Dörraufträge bearbeiten). 
@@ -33,7 +37,8 @@ Das Eingabefenster wird in der Dörraufträgeanzeige geöffnet. Es können alle 
 
 ![Dörr-Aufträge Bearbeiten](/images/bearbeiten.jpg)
 
-## Formularfelder
+<a name="Formulare"/>
+### Formularfelder
 * Vorname (forename), enthält Vorname des Bestellers als Text
 * Nachname (lastname), enthält Nachname des Bestellers als Text
 * Email (email), enthält die Email des Bestellers als Text
@@ -42,8 +47,8 @@ Das Eingabefenster wird in der Dörraufträgeanzeige geöffnet. Es können alle 
 * Menge (quantityCategory description), enthält die ausgewählte Menge als Text
 * Status (isDone), enthält den Status der Bestellung als Boolean
   
-  <a name="headers"/>
-## Validierung
+<a name="Formulare"/>
+### Validierung
 * Vorname: nicht leer, nur Buchstaben
 * Nachname: nicht leer, nur Buchstaben
 * Email: nicht leer, text(min. 1 lang) + @ + text(min. 1 lang) + . + text(min. 2 lang)
@@ -51,7 +56,8 @@ Das Eingabefenster wird in der Dörraufträgeanzeige geöffnet. Es können alle 
 * Frucht: nicht leer, keine sonstige Validierung nötig da Auswahl
 * Menge: nicht leer, keine sonstige Validierung nötig da Auswahl
 * Status: keine Validierung nötig da Checkbox
-  
+
+<a name="Formulare"/>
 ## Datenbank FruttiTutti
 ### Table fruit
 | name                   | type           | Not Null  | Primary Key   | Auto Increment  |
@@ -81,6 +87,7 @@ Das Eingabefenster wird in der Dörraufträgeanzeige geöffnet. Es können alle 
 | fruit_fk 🗝            | varchar(255)   | True      | False         | False           |
 | quantityCategory_fk 🗝 | varchar(255)   | True      | False         | False           |
 
+<a name="Formulare"/>
 ## Testfälle
 ```
 GEGEBEN SEI   Ich bin auf der Ansichtsseite
@@ -106,10 +113,12 @@ WENN          ich fertig mit der Bearbeitung bin
 DANN          können die Daten in der Datenbank gespeichert ("Änderungen speichern") oder der Vorgang abgebrochen werden.
 ```
 
+<a name="Formulare"/>
 ## Roadmap
 ### MO 26.03.2018
 
 ### MI 28.03.2018
 
+<a name="Formulare"/>
 # Testbericht
 
