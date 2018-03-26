@@ -5,8 +5,9 @@ import {ParchOrder} from "../../classes/parchOrder";
 import {QuantityCategory} from "../../classes/quantityCategory";
 import {PatchOrderService} from "../../services/patch-order.service";
 import {QuantityCategoryService} from "../../services/quantity-category.service";
-import {MatTableDataSource} from "@angular/material";
+import {MatDialog, MatTableDataSource} from "@angular/material";
 import {forEach} from "@angular/router/src/utils/collection";
+import {EditParchOrderDialogComponent} from "./edit-parch-order-dialog/edit-parch-order-dialog.component";
 
 @Component({
 	selector: 'app-home',
@@ -24,8 +25,9 @@ export class HomeComponent implements OnInit {
 
 	constructor(private fruitService: FruitService,
 	            private patchOrderService: PatchOrderService,
-	            private quantityCategoryService: QuantityCategoryService) {
-	}
+	            private quantityCategoryService: QuantityCategoryService,
+	            private dialog: MatDialog
+	) {}
 
 	ngOnInit() {
 		this.loadData();
@@ -67,6 +69,13 @@ export class HomeComponent implements OnInit {
 				}
 			}
 		))
+	}
+
+	public createNewParchOrder() {
+		let dialogRef = this.dialog.open(EditParchOrderDialogComponent, {
+			height: '400px',
+			width: '600px',
+		});
 	}
 
 }
