@@ -17,14 +17,17 @@ Die Firma TuttiFrutti möchte die Verwaltung von Dörraufträgen mit einem Webto
 ### Mockup
 #### Dörr-Aufträge anzeigen
 Die Anzeige Seite ist die Hauptseite. Hier werden alle Dörrauftröge angezeigt, welche noch nicht abgeschlossen sind. Wird auf "Dörrauftrag erfassen" geklickt, wird ein Eingabefenster geöffnet (Siehe Dörraufträge erfassen). In der Tabelle stehen einige Informationen zum Dörrauftrag sowie dem Kunden. Der Status enthält entweder einen roten Apfel 🍎, um einen Frucht innerhalb der Frist, oder eine braune, verdorbene Frucht 🥔, um eine Frucht ausserhalb der Frist, zu kennzeichnen. Jeder offene Dörrauftrag kann mit einem klick auf "Auftrag bearbeiten" verändert werden, indem ein Eingabefenster geöffnet wird (Siehe Dörraufträge bearbeiten). 
+
 ![Dörr-Aufträge Anzeigen](/images/anzeigen.jpg)
 
 #### Dörr-Aufträge erfassen
 Das Eingabefenster wird in der Dörraufträgeanzeige geöffnet. Es müssen alle Felder bis auf die Telefonnummer erfasst werden. Mit "Auftrag erstellen" werden die Daten in der Datenbank erfasst, mit "Auftrag abbrechen" wird nichts erfasst und das Eingabefenster schliesst sich.
+
 ![Dörr-Aufträge Erfassen](/images/erfassen.jpg)
 
 #### Dörr-Aufträge bearbeiten
 Das Eingabefenster wird in der Dörraufträgeanzeige geöffnet. Es können alle Felder bearbeitet werden, aber erst durch "Änderungen speichern" werden die Daten in der Datenbank verändert.
+
 ![Dörr-Aufträge Bearbeiten](/images/bearbeiten.jpg)
 
 ## Formularfelder
