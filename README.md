@@ -1,63 +1,62 @@
 # m307-FruttiTutti Gruppe 14
-## Inhaltsverzeichnis
-
-* [Projekt Informationen](#Informationen) 
-* [Konzeptionierung](#Konzeptionierung)  
-  * [Formulare](#Formulare)  
-    * [Mockup](#Mockup)  
-    * [Formularfelder](#Formularfelder)  
-    * [Validierung](#Validierung)  
-  * [Datenbank](#Datenbank) 
-    * [Table fruit](#fruit) 
-    * [Table quantityCategory](#quantityCategory) 
-    * [Table parchOrder](#parchOrder) 
-  * [Testfälle](#Testfälle)  
-  * [Roadmap](#Roadmap)  
-* [Testbericht](#Testbericht)  
+## 1 Inhaltsverzeichnis
+* [2 Projekt Informationen](#Informationen) 
+* [3 Konzeptionierung](#Konzeptionierung)  
+  * [3.1 Formulare](#Formulare)  
+    * [3.1.1 Mockup](#Mockup)  
+    * [3.1.2 Formularfelder](#Formularfelder)  
+    * [3.1.3 Validierung](#Validierung)  
+  * [3.2 Datenbank](#Datenbank) 
+    * [3.2.1 Table fruit](#fruit) 
+    * [3.2.2 Table quantityCategory](#quantityCategory) 
+    * [3.2.3 Table parchOrder](#parchOrder) 
+  * [3.3 Testfälle](#Testfälle)  
+  * [3.4 Roadmap](#Roadmap)  
+* [4 Testbericht](#Testbericht)  
 
 <a name="Informationen"/>
 
-# Projekt Informationen
-## Teammitglieder
+# 2 Projekt Informationen
+## 2.1 Teammitglieder
 Gian Ott   
 Donato Wolfisberg   
 
-## Projektstart   
+## 2.2 Projektstart   
 21.03.2018   
 
-## Projektende    
+## 2.3 Projektende    
 28.03.2018   
 
 <a name="Konzeptionierung"/>
 
-# Konzeptionierung
+# 3 Konzeptionierung
 Die Firma TuttiFrutti möchte die Verwaltung von Dörraufträgen mit einem Webtool vereinfachen. Dabei sollen alle noch nicht fertig verarbeiteten Dörraufträge angezeigt werden. In den Eingabefenstern können neue Aufträge erfasst, und die Daten bereits erfasster Aufträge bearbeitet werden. 
 
 <a name="Formulare"/>
 
-## Formulare
+## 3.1 Formulare
 
 <a name="Mockup"/>
 
-### Mockup
-#### Dörr-Aufträge anzeigen
+### 3.1.1 Mockup
+#### 3.1.1.1 Dörr-Aufträge anzeigen
 Die Anzeige Seite ist die Hauptseite. Hier werden alle Dörrauftröge angezeigt, welche noch nicht abgeschlossen sind. Wird auf "Dörrauftrag erfassen" geklickt, wird ein Eingabefenster geöffnet (Siehe Dörraufträge erfassen). In der Tabelle stehen einige Informationen zum Dörrauftrag sowie dem Kunden. Der Status enthält entweder einen roten Apfel 🍎, um einen Frucht innerhalb der Frist, oder eine braune, verdorbene Frucht 🥔, um eine Frucht ausserhalb der Frist, zu kennzeichnen. Jeder offene Dörrauftrag kann mit einem klick auf "Auftrag bearbeiten" verändert werden, indem ein Eingabefenster geöffnet wird (Siehe Dörraufträge bearbeiten). 
 
 ![Dörr-Aufträge Anzeigen](/images/anzeigen.jpg)
 
-#### Dörr-Aufträge erfassen
+#### 3.1.1.2 Dörr-Aufträge erfassen
 Das Eingabefenster wird in der Dörraufträgeanzeige geöffnet. Es müssen alle Felder bis auf die Telefonnummer erfasst werden. Mit "Auftrag erstellen" werden die Daten in der Datenbank erfasst, mit "Auftrag abbrechen" wird nichts erfasst und das Eingabefenster schliesst sich.
 
 ![Dörr-Aufträge Erfassen](/images/erfassen.jpg)
 
-#### Dörr-Aufträge bearbeiten
+#### 3.1.1.3 Dörr-Aufträge bearbeiten
 Das Eingabefenster wird in der Dörraufträgeanzeige geöffnet. Es können alle Felder bearbeitet werden, aber erst durch "Änderungen speichern" werden die Daten in der Datenbank verändert.
 
 ![Dörr-Aufträge Bearbeiten](/images/bearbeiten.jpg)
 
 <a name="Formularfelder"/>
 
-### Formularfelder
+### 3.1.2 Formularfelder
 * Vorname (forename), enthält Vorname des Bestellers als Text
 * Nachname (lastname), enthält Nachname des Bestellers als Text
 * Email (email), enthält die Email des Bestellers als Text
@@ -68,7 +67,7 @@ Das Eingabefenster wird in der Dörraufträgeanzeige geöffnet. Es können alle 
   
 <a name="Validierung"/>
 
-### Validierung
+### 3.1.3 Validierung
 * Vorname: nicht leer, nur Buchstaben
 * Nachname: nicht leer, nur Buchstaben
 * Email: nicht leer, text(min. 1 lang) + @ + text(min. 1 lang) + . + text(min. 2 lang)
@@ -79,11 +78,11 @@ Das Eingabefenster wird in der Dörraufträgeanzeige geöffnet. Es können alle 
 
 <a name="Datenbank"/>
 
-## Datenbank FruttiTutti
+## 3.2 Datenbank FruttiTutti
 
 <a name="fruit"/>
 
-### Table fruit
+###  3.2.1 Table fruit
 | name                   | type           | Not Null  | Primary Key   | Auto Increment  |
 | ---------------------- |----------------| --------- | ------------- | --------------- |
 | fruitId 🔑             | int(11)        | True      | True          | True            |
@@ -91,7 +90,7 @@ Das Eingabefenster wird in der Dörraufträgeanzeige geöffnet. Es können alle 
 
 <a name="quantityCategory"/>
 
-### Table quantityCategory
+### 3.2.2 Table quantityCategory
 | name                   | type           | Not Null  | Primary Key   | Auto Increment  |
 | ---------------------- |----------------| --------- | ------------- | --------------- |
 | quantityCategoryId 🔑  | int(11)        | True      | True          | True            |
@@ -101,7 +100,7 @@ Das Eingabefenster wird in der Dörraufträgeanzeige geöffnet. Es können alle 
 
 <a name="parchOrder"/>
 
-### Table parchOrder
+### 3.2.3 Table parchOrder
 | name                   | type           | Not Null  | Primary Key   | Auto Increment  |
 | ---------------------- |----------------| --------- | ------------- | --------------- |
 | parchOrderId 🔑        | int(11)        | True      | True          | True            |
@@ -116,7 +115,7 @@ Das Eingabefenster wird in der Dörraufträgeanzeige geöffnet. Es können alle 
 
 <a name="Testfälle"/>
 
-## Testfälle
+## 3.3 Testfälle
 ```
 GEGEBEN SEI   Ich bin auf der Ansichtsseite
 WENN          ich einen Dörrauftrag erstelle möchte ("Dörrauftrag erfassen")
@@ -143,12 +142,12 @@ DANN          können die Daten in der Datenbank gespeichert ("Änderungen speic
 
 <a name="Roadmap"/>
 
-## Roadmap
-### MO 26.03.2018
+## 3.4 Roadmap
+### 3.4.1 MO 26.03.2018
 
-### MI 28.03.2018
+### 3.4.2 MI 28.03.2018
 
 <a name="Testbericht"/>
 
-# Testbericht
+# 4 Testbericht
 
