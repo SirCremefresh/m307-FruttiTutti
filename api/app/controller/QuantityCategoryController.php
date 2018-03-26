@@ -10,6 +10,6 @@ use Slim\Http\Request;
 use Slim\Http\Response;
 
 $app->get('/quantitycategory', function (Request $request, Response $response, array $args) {
-    $quantityCategories = QuantityCategory::getAll();
-    return $response->withJson($quantityCategories);
+	$quantityCategories = QuantityCategory::getAll();
+	return $response->withJson($quantityCategories);
 });

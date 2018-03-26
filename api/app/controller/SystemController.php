@@ -11,6 +11,6 @@ use Slim\Http\Request;
 use Slim\Http\Response;
 
 $app->get('/system/ping', function (Request $request, Response $response, array $args) {
-    $response->getBody()->write("pong");
-    return $response;
+	$response->getBody()->write("pong");
+	return $response;
 });

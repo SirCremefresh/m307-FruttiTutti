@@ -10,6 +10,6 @@ use Slim\Http\Request;
 use Slim\Http\Response;
 
 $app->get('/fruit', function (Request $request, Response $response, array $args) {
-    $fruits = Fruit::getAll();
-    return $response->withJson($fruits);
+	$fruits = Fruit::getAll();
+	return $response->withJson($fruits);
 });
