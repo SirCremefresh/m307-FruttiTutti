@@ -1,0 +1,41 @@
+/*
+ * Actual Sticky Footer Styles
+ */
+.all-wrap {
+    min-height: 100vh;
+}
+
+.page-wrap {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.content {
+    flex: 1;
+}
+
+footer {
+    background-color: #4054B2;
+    padding: 50px;
+    color: #fff;
+}
+
+mat-card {
+    width: 80%;
+    margin: 20px auto 20px;
+    padding: 10px;
+}
+
+/*
+ * Make the Component injected by Router Outlet full height:
+ */
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+main > *:not(router-outlet) {
+    flex: 1;
+    display: block;
+}
