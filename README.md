@@ -13,8 +13,8 @@
   * [3.3 Testfälle](#Testfälle)  
   * [3.4 Roadmap](#Roadmap)  
 * [4 Testbericht](#Testbericht)  
-  * [4.1 Screenshot der Seite](#Screenshot)  
-* [5 REST-API](#rest-api)
+* [5 Screenshot der Seite](#Screenshot)  
+* [6 REST-API](#rest-api)
 
 <a name="Informationen"/>
 
@@ -203,15 +203,17 @@ DANN          wird mir die entsprechende Fehlermeldung zurückgemeldet.
 
 <a name="Screenshot"/>
 
-## 4.1 Screenshot der Seite
+# 5 Screenshot der Seite
 
+## Home Page
 ![Home](/images/home.jpg)
 
+## Edit Page
 ![Edit](/images/edit.jpg)
 
 <a name="rest-api"/>
 
-# 5 REST-API
+# 6 REST-API
 | METHOD   | PATH                 | RESPONSE            | REQUEST BODY |
 | -------- | ---------------------| ------------------- | ------------ |
 | GET      | /fruit               | Fruit[]             | NONE         |
