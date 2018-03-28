@@ -8,7 +8,8 @@ import {AbstractControl, NG_VALIDATORS, Validator} from "@angular/forms";
 export class JustCharsValidatorDirective implements Validator {
 
 	validate(control: AbstractControl): { [key: string]: any } {
-		return (/^[a-zA-Z]*$/.test(control.value)) ? null : {'justCharsValidator': {value: control.value}};
+		let val = (control.value) ? control.value.trim() : "";
+		return (/^[a-zA-Z]*$/.test(val)) ? null : {'justCharsValidator': {value: val}};
 	}
 
 

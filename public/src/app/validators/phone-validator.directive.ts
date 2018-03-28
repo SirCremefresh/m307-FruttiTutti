@@ -1,14 +1,15 @@
-import { Directive } from '@angular/core';
+import {Directive} from '@angular/core';
 import {AbstractControl, NG_VALIDATORS, Validator} from "@angular/forms";
 
 @Directive({
-  selector: '[appPhoneValidator]',
+	selector: '[appPhoneValidator]',
 	providers: [{provide: NG_VALIDATORS, useExisting: PhoneValidatorDirective, multi: true}]
 })
 export class PhoneValidatorDirective implements Validator {
 
 	validate(control: AbstractControl): { [key: string]: any } {
-		return (control.value === "" || /^[+]?[0-9 ]{7,30}$/.test(control.value)) ? null : {'phoneValidator': {value: control.value}};
+		let val = (control.value) ? control.value.trim() : "";
+		return (control.value === "" || /^[+]?[0-9 ]{7,30}$/.test(val)) ? null : {'phoneValidator': {value: control.value}};
 	}
 
 
