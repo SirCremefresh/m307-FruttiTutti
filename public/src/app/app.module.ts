@@ -8,6 +8,7 @@ import {HomeComponent} from './pages/home/home.component';
 import {LayoutComponent} from './layout/layout.component';
 import {
 	MatButtonModule, MatCardModule, MatCheckboxModule, MatDialogModule, MatDividerModule, MatFormFieldModule,
+	MatIconModule,
 	MatInputModule,
 	MatSelectModule,
 	MatTableModule,
@@ -50,7 +51,8 @@ import { PhoneValidatorDirective } from './validators/phone-validator.directive'
 		MatInputModule,
 		MatFormFieldModule,
 		MatSelectModule,
-		MatCheckboxModule
+		MatCheckboxModule,
+		MatIconModule
 	],
 	providers: [
 		FruitService,

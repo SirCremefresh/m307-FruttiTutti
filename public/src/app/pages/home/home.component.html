@@ -35,7 +35,9 @@
 	<ng-container matColumnDef="edit">
 		<mat-header-cell *matHeaderCellDef> Bestellung bearbeiten</mat-header-cell>
 		<mat-cell *matCellDef="let element">
-			<button mat-button (click)="editNewParchOrder(element.parchOrder)">Bestellung bearbeiten</button>
+			<button mat-icon-button class="edit-icon" (click)="editParchOrder(element.parchOrder)">
+				<mat-icon aria-label="Edit">edit</mat-icon>
+			</button>
 		</mat-cell>
 	</ng-container>
 

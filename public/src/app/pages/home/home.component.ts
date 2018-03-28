@@ -80,7 +80,7 @@ export class HomeComponent implements OnInit {
 		});
 	}
 
-	public async editNewParchOrder(parchOrder: ParchOrder) {
+	public async editParchOrder(parchOrder: ParchOrder) {
 		console.log(parchOrder);
 		let dialogRef = this.dialog.open(EditParchOrderDialogComponent, {
 			height: '500px',
