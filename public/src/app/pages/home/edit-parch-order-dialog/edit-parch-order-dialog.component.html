@@ -1,5 +1,5 @@
 <h3>Address Form</h3>
-<form class="formwidth" (ngSubmit)="onSubmit()" #myForm="ngForm">
+<form class="formwidth" (ngSubmit)="onSubmit()" #parchForm="ngForm">
 	<fieldset>
 		<legend>Kunde</legend>
 
@@ -133,7 +133,7 @@
 
 			<mat-error
 					*ngIf="(quantityCategory_fk.invalid && (quantityCategory_fk.dirty || quantityCategory_fk.touched)) && quantityCategory_fk.hasError('required')">
-				Vorname muss ausgefüllt sein
+				Es Muss eine menge angegeben werden
 			</mat-error>
 
 		</mat-form-field>

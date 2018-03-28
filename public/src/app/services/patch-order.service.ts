@@ -13,4 +13,8 @@ export class PatchOrderService {
 		return await this.httpClient.get<ParchOrder[]>(environment.apiUrl + 'parchorder/notdone').toPromise();
 	}
 
+	public async create(parchOrder: ParchOrder): Promise<any> {
+		return await this.httpClient.post(environment.apiUrl + 'parchorder', parchOrder).toPromise();
+	}
+
 }

@@ -1,4 +1,4 @@
-import {Component, Inject, OnInit} from '@angular/core';
+import {Component, Inject, OnInit, ViewChild} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material";
 import {ParchOrder} from "../../../classes/parchOrder";
 import {Fruit} from "../../../classes/fruit";
@@ -6,6 +6,7 @@ import {FruitService} from "../../../services/fruit.service";
 import {QuantityCategoryService} from "../../../services/quantity-category.service";
 import {PatchOrderService} from "../../../services/patch-order.service";
 import {QuantityCategory} from "../../../classes/quantityCategory";
+import {NgForm} from "@angular/forms";
 
 @Component({
 	selector: 'app-edit-parch-order-dialog',
@@ -17,6 +18,10 @@ export class EditParchOrderDialogComponent implements OnInit {
 	public fruits: Fruit[];
 	public quantityCategories: QuantityCategory[];
 	public isCreate: boolean = true;
+
+
+	@ViewChild('parchForm') public parchForm: NgForm;
+
 
 	constructor(public dialogRef: MatDialogRef<EditParchOrderDialogComponent>,
 	            @Inject(MAT_DIALOG_DATA) public data: any,
@@ -32,7 +37,10 @@ export class EditParchOrderDialogComponent implements OnInit {
 	}
 
 	onSubmit() {
-		console.log(this.parchOrder);
+		if (this.parchForm.valid) {
+			this.patchOrderService.create(this.parchOrder);
+		}
 	}
+
 
 }

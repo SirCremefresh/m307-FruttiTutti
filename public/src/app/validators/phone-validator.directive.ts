@@ -9,7 +9,7 @@ export class PhoneValidatorDirective implements Validator {
 
 	validate(control: AbstractControl): { [key: string]: any } {
 		let val = (control.value) ? control.value.trim() : "";
-		return (control.value === "" || /^[+]?[0-9 ]{7,30}$/.test(val)) ? null : {'phoneValidator': {value: control.value}};
+		return (val === "" || /^[+]?[0-9 ]{7,30}$/.test(val)) ? null : {'phoneValidator': {value: control.value}};
 	}
 
 

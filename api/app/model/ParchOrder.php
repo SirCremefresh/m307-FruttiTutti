@@ -51,7 +51,7 @@ class ParchOrder
 			$arr['lastname'] ?? '',
 			$arr['email'] ?? '',
 			$arr['phone'] ?? '',
-			$arr['orderDate'] ?? 0,
+			$arr['orderDate'] ?? date("Y-m-d H:i:s"),
 			$arr['isDone'] ?? 0,
 			$arr['fruit_fk'] ?? 0,
 			$arr['quantityCategory_fk'] ?? 0
