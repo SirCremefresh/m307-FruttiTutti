@@ -41,6 +41,10 @@ export class EditParchOrderDialogComponent implements OnInit {
 	}
 
 	async onSubmit() {
+		for(let control in this.parchForm.form.controls) {
+			this.parchForm.form.controls[control].markAsTouched();
+		}
+		this.parchForm.form.markAsDirty();
 		if (this.parchForm.valid) {
 			if (this.isCreate) {
 				await this.patchOrderService.create(this.parchOrder);
