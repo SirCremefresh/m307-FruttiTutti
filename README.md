@@ -53,7 +53,7 @@ Das Eingabefenster wird in der Dörraufträgeanzeige geöffnet. Es müssen alle 
 #### 3.1.1.3 Dörr-Aufträge bearbeiten
 Das Eingabefenster wird in der Dörraufträgeanzeige geöffnet. Es können alle Felder bearbeitet werden, aber erst durch "Änderungen speichern" werden die Daten in der Datenbank verändert.
 
-![Dörr-Aufträge Bearbeiten](/images/bearbeiten.jpg)
+![Dörr-Aufträge Bearbeiten](/images/bearbeiten.png)
 
 <a name="Formularfelder"/>
 
@@ -182,7 +182,7 @@ DANN          wird mir die entsprechende Fehlermeldung zurückgemeldet.
 
 ## 3.4 Roadmap
 
-![Trello Screenshot](/images/trello.jpg)
+![Trello Screenshot](/images/trello.png)
 
 <a name="Testbericht"/>
 
