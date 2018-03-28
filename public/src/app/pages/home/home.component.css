@@ -8,3 +8,7 @@
     margin: auto;
     display: block;
 }
+
+mat-cell {
+    overflow: visible !important;
+}

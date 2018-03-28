@@ -17,9 +17,10 @@ import {EditParchOrderDialogComponent} from "./edit-parch-order-dialog/edit-parc
 export class HomeComponent implements OnInit {
 	public fruits: Fruit[];
 	public parchOrdersNotDone: ParchOrder[];
+	public selectedParchOrders: ParchOrder[] = [];
 	public quantityCategories: QuantityCategory[];
 
-	public displayedColumns = ['isOnTime', 'forename', 'lastname', 'fruit', 'edit'];
+	public displayedColumns = ['select', 'isOnTime', 'forename', 'lastname', 'fruit', 'edit'];
 	public dataSource = new MatTableDataSource();
 
 
@@ -97,5 +98,22 @@ export class HomeComponent implements OnInit {
 
 		this.loadData();
 	}
+
+	public selectClick(parchOrder: ParchOrder) {
+		if (this.selectedParchOrders.indexOf(parchOrder) === -1) {
+			this.selectedParchOrders.push(parchOrder);
+		} else {
+			this.selectedParchOrders.splice(this.selectedParchOrders.indexOf(parchOrder),1);
+		}
+	}
+
+	public async finishSelection() {
+		for ( let parchOrder of this.selectedParchOrders) {
+			parchOrder.isDone = true;
+			this.patchOrderService.edit(parchOrder, parchOrder.parchOrderId);
+		}
+		this.selectedParchOrders = [];
+		this.loadData();
+
 
 }
