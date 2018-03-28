@@ -205,9 +205,9 @@ DANN          wird mir die entsprechende Fehlermeldung zurückgemeldet.
 
 ## 4.1 Screenshot der Seite
 
-![Trello Screenshot](/images/home.jpg)
+![Home](/images/home.jpg)
 
-![Trello Screenshot](/images/edit.jpg)
+![Edit](/images/edit.jpg)
 
 <a name="rest-api"/>
 
