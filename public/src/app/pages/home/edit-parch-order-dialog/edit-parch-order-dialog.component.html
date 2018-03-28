@@ -100,21 +100,42 @@
 	<fieldset>
 		<legend>Bestellung</legend>
 		<mat-form-field>
-			<mat-select placeholder="Frucht" [(ngModel)]="parchOrder.fruit_fk" required name="fruit_fk">
+			<mat-select
+					placeholder="Frucht"
+					[(ngModel)]="parchOrder.fruit_fk"
+					#fruit_fk="ngModel"
+					name="fruit_fk"
+					required
+			>
 				<mat-option *ngFor="let fruit of fruits" [value]="fruit.fruitId">
 					{{ fruit.name }}
 				</mat-option>
 			</mat-select>
+			<mat-error
+					*ngIf="(fruit_fk.invalid && (fruit_fk.dirty || fruit_fk.touched)) && fruit_fk.hasError('required')">
+				Es muss eine frucht ausgewählt werden
+			</mat-error>
 		</mat-form-field>
 
 		<mat-form-field *ngIf="isCreate">
-			<mat-select placeholder="Menge" [(ngModel)]="parchOrder.quantityCategory_fk" required
-			            name="quantityCategory_fk">
+			<mat-select
+					placeholder="Menge"
+					[(ngModel)]="parchOrder.quantityCategory_fk"
+					name="quantityCategory_fk"
+					#quantityCategory_fk="ngModel"
+					required
+			>
 				<mat-option *ngFor="let quantityCategory of quantityCategories"
 				            [value]="quantityCategory.quantityCategoryId">
 					{{ quantityCategory.description }} | {{ quantityCategory.totalDays }} Days
 				</mat-option>
 			</mat-select>
+
+			<mat-error
+					*ngIf="(quantityCategory_fk.invalid && (quantityCategory_fk.dirty || quantityCategory_fk.touched)) && quantityCategory_fk.hasError('required')">
+				Vorname muss ausgefüllt sein
+			</mat-error>
+
 		</mat-form-field>
 
 		<mat-checkbox *ngIf="!isCreate" [(ngModel)]="parchOrder.isDone" name="isDone">Ist fertig</mat-checkbox>
