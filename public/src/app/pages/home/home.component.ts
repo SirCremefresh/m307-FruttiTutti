@@ -73,8 +73,9 @@ export class HomeComponent implements OnInit {
 
 	public createNewParchOrder() {
 		let dialogRef = this.dialog.open(EditParchOrderDialogComponent, {
-			height: '400px',
-			width: '600px',
+			height: '500px',
+			width: '800px',
+			data: {isCreate: true}
 		});
 	}
 

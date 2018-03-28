@@ -7,7 +7,10 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {HomeComponent} from './pages/home/home.component';
 import {LayoutComponent} from './layout/layout.component';
 import {
-	MatButtonModule, MatCardModule, MatDialogModule, MatDividerModule, MatTableModule,
+	MatButtonModule, MatCardModule, MatCheckboxModule, MatDialogModule, MatDividerModule, MatFormFieldModule,
+	MatInputModule,
+	MatSelectModule,
+	MatTableModule,
 	MatToolbarModule
 } from "@angular/material";
 import {FruitService} from "./services/fruit.service";
@@ -17,6 +20,9 @@ import {QuantityCategoryService} from "./services/quantity-category.service";
 import {EditParchOrderDialogComponent} from './pages/home/edit-parch-order-dialog/edit-parch-order-dialog.component';
 import {FormsModule} from "@angular/forms";
 import {AppRoutingModule} from "./app-routing.module";
+import {JustCharsValidatorDirective} from './validators/just-chars-validator.directive';
+import {EmailValidatorDirective} from './validators/email-validator.directive';
+import { PhoneValidatorDirective } from './validators/phone-validator.directive';
 
 
 @NgModule({
@@ -24,7 +30,10 @@ import {AppRoutingModule} from "./app-routing.module";
 		AppComponent,
 		HomeComponent,
 		LayoutComponent,
-		EditParchOrderDialogComponent
+		EditParchOrderDialogComponent,
+		JustCharsValidatorDirective,
+		EmailValidatorDirective,
+		PhoneValidatorDirective
 	],
 	imports: [
 		AppRoutingModule,
@@ -37,7 +46,11 @@ import {AppRoutingModule} from "./app-routing.module";
 		MatDividerModule,
 		MatTableModule,
 		MatDialogModule,
-		MatButtonModule
+		MatButtonModule,
+		MatInputModule,
+		MatFormFieldModule,
+		MatSelectModule,
+		MatCheckboxModule
 	],
 	providers: [
 		FruitService,

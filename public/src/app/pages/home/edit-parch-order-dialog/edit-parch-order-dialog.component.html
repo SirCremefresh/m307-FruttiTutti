@@ -1,3 +1,126 @@
-<p>
-  edit-parch-order-dialog works!
-</p>
+<h3>Address Form</h3>
+<form class="formwidth" (ngSubmit)="onSubmit()" #myForm="ngForm">
+	<fieldset>
+		<legend>Kunde</legend>
+
+		<mat-form-field class="halfWith">
+			<input
+					matInput
+					type="text"
+					[(ngModel)]="parchOrder.forename"
+					#forename="ngModel"
+					placeholder="Vorname"
+					id="forename"
+					name="forename"
+					required
+					appJustCharsValidator
+			>
+
+			<mat-error
+					*ngIf="(forename.invalid && (forename.dirty || forename.touched)) && forename.hasError('required')">
+				Vorname muss ausgefüllt sein
+			</mat-error>
+
+			<mat-error
+					*ngIf="(forename.invalid && (forename.dirty || forename.touched)) && forename.hasError('justCharsValidator')">
+				Der Vorname darf nur Buchstaben enthalten
+			</mat-error>
+
+		</mat-form-field>
+
+		<mat-form-field class="halfWith">
+			<input
+					matInput
+					type="text"
+					[(ngModel)]="parchOrder.lastname"
+					#lastname="ngModel"
+					placeholder="Nachname"
+					id="lastname"
+					name="lastname"
+					required
+					appJustCharsValidator
+			>
+
+			<mat-error
+					*ngIf="(lastname.invalid && (lastname.dirty || lastname.touched)) && lastname.hasError('required')">
+				Nachname muss ausgefüllt sein
+			</mat-error>
+
+
+			<mat-error
+					*ngIf="(lastname.invalid && (lastname.dirty || lastname.touched)) && lastname.hasError('justCharsValidator')">
+				Der Nachname darf nur Buchstaben enthalten
+			</mat-error>
+		</mat-form-field>
+
+		<mat-form-field class="fullwidth">
+			<input
+					matInput
+					type="email"
+					[(ngModel)]="parchOrder.email"
+					placeholder="E-Mail"
+					id="email"
+					name="email"
+					#email="ngModel"
+					required
+					appEmailValidator
+			>
+
+			<mat-error
+					*ngIf="(email.invalid && (email.dirty || email.touched)) && email.hasError('required')">
+				E-Mail muss ausgefüllt sein
+			</mat-error>
+
+
+			<mat-error
+					*ngIf="(email.invalid && (email.dirty || email.touched)) && email.hasError('emailValidator')">
+				Es mus eine Valide E-Mail sein mit
+			</mat-error>
+		</mat-form-field>
+
+		<mat-form-field class="fullwidth">
+			<input
+					matInput
+					type="tel"
+					[(ngModel)]="parchOrder.phone"
+					placeholder="Telefon"
+					id="phone"
+					name="phone"
+					#phone="ngModel"
+					appPhoneValidator
+			>
+
+			<mat-error
+					*ngIf="(phone.invalid && (phone.dirty || phone.touched)) && phone.hasError('phoneValidator')">
+				Es mus eine Valide Telefon nummer sein sein mit
+			</mat-error>
+		</mat-form-field>
+	</fieldset>
+
+	<fieldset>
+		<legend>Bestellung</legend>
+		<mat-form-field>
+			<mat-select placeholder="Frucht" [(ngModel)]="parchOrder.fruit_fk" required name="fruit_fk">
+				<mat-option *ngFor="let fruit of fruits" [value]="fruit.fruitId">
+					{{ fruit.name }}
+				</mat-option>
+			</mat-select>
+		</mat-form-field>
+
+		<mat-form-field *ngIf="isCreate">
+			<mat-select placeholder="Menge" [(ngModel)]="parchOrder.quantityCategory_fk" required
+			            name="quantityCategory_fk">
+				<mat-option *ngFor="let quantityCategory of quantityCategories"
+				            [value]="quantityCategory.quantityCategoryId">
+					{{ quantityCategory.description }} | {{ quantityCategory.totalDays }} Days
+				</mat-option>
+			</mat-select>
+		</mat-form-field>
+
+		<mat-checkbox *ngIf="!isCreate" [(ngModel)]="parchOrder.isDone" name="isDone">Ist fertig</mat-checkbox>
+	</fieldset>
+
+
+	<button type="submit" mat-raised-button>Submit</button>
+
+</form>

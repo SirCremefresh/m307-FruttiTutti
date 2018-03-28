@@ -108,7 +108,7 @@ $app->put('/parchorder/{id}', function (Request $request, Response $response, ar
 	if (!isValidParchOrder($parchOrder)) {
 		return $response->withJson(["updated" => false]);
 	}
-	print  "sdjfasd";
+
 	$saveParchOrder = ParchOrder::update($args['id'], $parchOrder);
 
 	return $response->withJson($saveParchOrder);
