@@ -13,6 +13,7 @@
   * [3.3 Testfälle](#Testfälle)  
   * [3.4 Roadmap](#Roadmap)  
 * [4 Testbericht](#Testbericht)  
+  * [4.1 Screenshot der Seite](#Screenshot)  
 * [5 REST-API](#rest-api)
 
 <a name="Informationen"/>
@@ -117,61 +118,67 @@ Das Eingabefenster wird in der Dörraufträgeanzeige geöffnet. Es können alle 
 <a name="Testfälle"/>
 
 ## 3.3 Testfälle
-
+### #1
 ```
 GEGEBEN SEI   Ich bin auf der Ansichtsseite
 WENN          nicht abgeschlossene Dörraufträge in der Datenbank erfasst sind
 DANN          werden diese in einer Tabelle aufgelistet.
 ```
-
+### #2
 ```
 GEGEBEN SEI   Ich bin auf der Ansichtsseite
 WENN          der Dörrauftrag noch nicht abgeschlossen ist und das Enddatum des Auftrages überschritten ist
 DANN          wird bei der Frucht das Icon zu verdorben gewechselt.
 ```
-
+### #3
 ```
 GEGEBEN SEI   Ich bin auf der Ansichtsseite
 WENN          ich einen Dörrauftrag erstelle möchte ("Dörrauftrag erfassen")
 DANN          öffnet sich ein Eingabefenster um einen Benutzer zu efassen.
 ```
-
+### #4
 ```
 GEGEBEN SEI   Ich erfasse gerade einen neuen Dörrauftrag
 WENN          ich die Angaben gemacht habe
 DANN          können diese in der Datenbank gespeichert ("Auftrag erstellen") oder der Vorgang abgebrochen werden.
 ```
-
+### #5
 ```
 GEGEBEN SEI   Ich bin auf der Ansichtsseite
 WENN          ich möchte einen Dörrauftrag bearbeiten ("Auftrag bearbeiten")
 DANN          öffnet sich ein Eingabefenster um den ausgewählten Auftrag zu bearbeiten.
 ```
-
+### #6
+```
+GEGEBEN SEI   Ich bin auf der Ansichtsseite
+WENN          ich wähle mehrere Dörraufträge an 
+DANN          werden alle Ausgewählten Aufträge mit einem Klick auf Auswahl abschliessen in der Datenbank als abgeschlossen gespiechert. 
+```
+### #7
 ```
 GEGEBEN SEI   Ich bearbeite gerade einen Dörrauftrag
 WENN          ich fertig mit der Bearbeitung bin
 DANN          können die Daten in der Datenbank gespeichert ("Änderungen speichern") oder der Vorgang abgebrochen werden.
 ```
-
+### #8
 ```
 GEGEBEN SEI   Ich bearbeite oder erstelle einen Dörrauftrag
 WENN          ich keinen Vornamen oder Nachnamen angebe, oder er andere Zeichen als Buchstaben enthält 
 DANN          wird mir die entsprechende Fehlermeldung zurückgemeldet.
 ```
-
+### #9
 ```
 GEGEBEN SEI   Ich bearbeite oder erstelle einen Dörrauftrag
 WENN          ich keine Email Adresse angebe, oder dieser ein @ oder ein danach . fehlt
 DANN          wird mir die entsprechende Fehlermeldung zurückgemeldet.
 ```
-
+### #10
 ```
 GEGEBEN SEI   Ich bearbeite oder erstelle einen Dörrauftrag
 WENN          ich in der Telefonnummer andere Zeichen als Zahlen und Leerschläge verwende, jedoch darf ein + am Anfang stehen
 DANN          wird mir die entsprechende Fehlermeldung zurückgemeldet.
 ```
-
+### #11
 ```
 GEGEBEN SEI   Ich bearbeite oder erstelle einen Dörrauftrag
 WENN          ich keine Frucht oder keine Menge auswähle
@@ -187,7 +194,20 @@ DANN          wird mir die entsprechende Fehlermeldung zurückgemeldet.
 <a name="Testbericht"/>
 
 # 4 Testbericht
-## 4.1
+* #1 Es werden der Status, der Vorname, der Nachname und die Frucht aus der Datenbank ausgelesen und dargestellt 
+* #2 Das Rote Apfel Icon erscheint, wenn der Auftrag noch nicht abgeschlossen, aber noch innerhalb der Zeit ist (Berechnet aus dem Erstelldatums des Auftrages + den Tagen je nach Menge). Andernfalls erscheint eine braune Kartoffel.
+* #3 & #4 Es können neue Dörraufträge in einem Eingabefenster erstellt und in der Datenbank gespeichert werden.
+* #5 & #6 Es können erfasste Dörraufträge sowie deren Status bearbeitet und in der Datenbank gespeichert werden.
+* #8, #9 & #10 Die Validierung von Vor-und Nachnamen, Telefonnummer sowie der Email Adresse funktioniert.
+* #11 Es können mehere Dörraufträge ausgewählt und zusammen abgeschlossen werden.
+
+<a name="Screenshot"/>
+
+## 4.1 Screenshot der Seite
+
+![Trello Screenshot](/images/home.jpg)
+
+![Trello Screenshot](/images/edit.jpg)
 
 <a name="rest-api"/>
 
