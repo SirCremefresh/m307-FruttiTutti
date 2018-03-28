@@ -108,12 +108,12 @@ export class HomeComponent implements OnInit {
 	}
 
 	public async finishSelection() {
-		for ( let parchOrder of this.selectedParchOrders) {
-			parchOrder.isDone = true;
-			this.patchOrderService.edit(parchOrder, parchOrder.parchOrderId);
-		}
-		this.selectedParchOrders = [];
-		this.loadData();
+    for (let parchOrder of this.selectedParchOrders) {
+      parchOrder.isDone = true;
+      this.patchOrderService.edit(parchOrder, parchOrder.parchOrderId);
+    }
+    this.selectedParchOrders = [];
+    this.loadData();
 
-
+  }
 }
