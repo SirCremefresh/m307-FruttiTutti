@@ -13,6 +13,7 @@
   * [3.3 Testfälle](#Testfälle)  
   * [3.4 Roadmap](#Roadmap)  
 * [4 Testbericht](#Testbericht)  
+* [5 REST-API](#rest-api)
 
 <a name="Informationen"/>
 
@@ -187,4 +188,15 @@ DANN          wird mir die entsprechende Fehlermeldung zurückgemeldet.
 
 # 4 Testbericht
 ## 4.1
+
+<a name="rest-api"/>
+
+# 5 REST-API
+| METHOD   | PATH                 | RESPONSE            | REQUEST BODY |
+| -------- | ---------------------| ------------------- | ------------ |
+| GET      | /fruit               | Fruit[]             | NONE         |
+| GET      | /quantitycategory    | Quantitycategory[]  | NONE         |
+| GET      | /parchorder/notdone  | Parchorder[]        | NONE         |
+| POST     | /parchorder          | Parchorder          | Parchorder   |
+| PUT      | /parchorder/{id}     | Parchorder          | Parchorder   |
 
