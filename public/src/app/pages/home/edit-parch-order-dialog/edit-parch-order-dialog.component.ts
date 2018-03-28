@@ -29,6 +29,10 @@ export class EditParchOrderDialogComponent implements OnInit {
 	            private patchOrderService: PatchOrderService,
 	            private quantityCategoryService: QuantityCategoryService) {
 		this.isCreate = data.isCreate;
+		if (!this.isCreate) {
+			console.log(data);
+			this.parchOrder = data.parchOrder;
+		}
 	}
 
 	async ngOnInit() {
@@ -36,9 +40,14 @@ export class EditParchOrderDialogComponent implements OnInit {
 		this.quantityCategories = await this.quantityCategoryService.getAll();
 	}
 
-	onSubmit() {
+	async onSubmit() {
 		if (this.parchForm.valid) {
-			this.patchOrderService.create(this.parchOrder);
+			if (this.isCreate) {
+				await this.patchOrderService.create(this.parchOrder);
+			} else {
+				await this.patchOrderService.edit(this.parchOrder, this.parchOrder.parchOrderId);
+			}
+			this.dialogRef.close();
 		}
 	}
 

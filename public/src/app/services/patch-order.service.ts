@@ -17,4 +17,8 @@ export class PatchOrderService {
 		return await this.httpClient.post(environment.apiUrl + 'parchorder', parchOrder).toPromise();
 	}
 
+	public async edit(parchOrder: ParchOrder, id): Promise<any> {
+		return await this.httpClient.put(environment.apiUrl + 'parchorder/' + id, parchOrder).toPromise();
+	}
+
 }

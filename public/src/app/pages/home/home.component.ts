@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
 	public parchOrdersNotDone: ParchOrder[];
 	public quantityCategories: QuantityCategory[];
 
-	public displayedColumns = ['isOnTime', 'forename', 'lastname', 'fruit'];
+	public displayedColumns = ['isOnTime', 'forename', 'lastname', 'fruit', 'edit'];
 	public dataSource = new MatTableDataSource();
 
 
@@ -65,7 +65,8 @@ export class HomeComponent implements OnInit {
 					'isOnTime': isOnTime,
 					'forename': parchOrderNotDone.forename,
 					'lastname': parchOrderNotDone.lastname,
-					'fruit': this.getFruitById(parchOrderNotDone.fruit_fk).name
+					'fruit': this.getFruitById(parchOrderNotDone.fruit_fk).name,
+					'parchOrder': parchOrderNotDone
 				}
 			}
 		))
@@ -77,6 +78,19 @@ export class HomeComponent implements OnInit {
 			width: '800px',
 			data: {isCreate: true}
 		});
+	}
+
+	public async editNewParchOrder(parchOrder: ParchOrder) {
+		console.log(parchOrder);
+		let dialogRef = this.dialog.open(EditParchOrderDialogComponent, {
+			height: '500px',
+			width: '800px',
+			data: {isCreate: false, parchOrder: parchOrder}
+		});
+
+		await dialogRef.afterClosed().toPromise();
+
+		this.loadData();
 	}
 
 }

@@ -53,7 +53,7 @@ function isValidParchOrder(ParchOrder $parchOrder)
 	}
 
 	if (
-		$parchOrder->isDone !== 0 && $parchOrder->isDone !== 1
+		$parchOrder->isDone != 0 && $parchOrder->isDone != 1
 	) {
 		print("fail isDone");
 		return false;
