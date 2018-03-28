@@ -50,7 +50,7 @@ class QuantityCategory
 		return $quantityCategories;
 	}
 
-	public static function get($id): ?QuantityCategory
+	public static function get($id)
 	{
 		$conn = Database::getDbConn();
 		$statement = $conn->prepare('SELECT * FROM quantityCategory WHERE quantityCategoryId = :id');

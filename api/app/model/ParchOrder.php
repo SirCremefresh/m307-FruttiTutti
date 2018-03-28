@@ -43,7 +43,7 @@ class ParchOrder
 		$this->quantityCategory_fk = $quantityCategory_fk;
 	}
 
-	public static function fromArray($arr): ParchOrder
+	public static function fromArray($arr)
 	{
 		return new ParchOrder(
 			$arr['parchOrderId'] ?? 0,
@@ -85,7 +85,7 @@ class ParchOrder
 		return $parchOrders;
 	}
 
-	public static function get($id): ?ParchOrder
+	public static function get($id)
 	{
 		$conn = Database::getDbConn();
 		$statement = $conn->prepare('SELECT * FROM parchOrder WHERE parchOrderId = :id');

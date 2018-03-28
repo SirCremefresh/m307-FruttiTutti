@@ -38,7 +38,7 @@ class Fruit
 		return $fruits;
 	}
 
-	public static function get($id): ?Fruit
+	public static function get($id)
 	{
 		$conn = Database::getDbConn();
 		$statement = $conn->prepare('SELECT * FROM fruit WHERE fruitId = :id');
