@@ -116,6 +116,19 @@ Das Eingabefenster wird in der Dörraufträgeanzeige geöffnet. Es können alle 
 <a name="Testfälle"/>
 
 ## 3.3 Testfälle
+
+```
+GEGEBEN SEI   Ich bin auf der Ansichtsseite
+WENN          nicht abgeschlossene Dörraufträge in der Datenbank erfasst sind
+DANN          werden diese in einer Tabelle aufgelistet.
+```
+
+```
+GEGEBEN SEI   Ich bin auf der Ansichtsseite
+WENN          der Dörrauftrag noch nicht abgeschlossen ist und das Enddatum des Auftrages überschritten ist
+DANN          wird bei der Frucht das Icon zu verdorben gewechselt.
+```
+
 ```
 GEGEBEN SEI   Ich bin auf der Ansichtsseite
 WENN          ich einen Dörrauftrag erstelle möchte ("Dörrauftrag erfassen")
@@ -129,12 +142,6 @@ DANN          können diese in der Datenbank gespeichert ("Auftrag erstellen") o
 ```
 
 ```
-GEGEBEN SEI   Ich bearbeite oder erstelle einen Dörrauftrag
-WENN          ich ein Feld frei lasse oder falsche Daten angebe
-DANN          wird mir dies zurückgemeldet.
-```
-
-```
 GEGEBEN SEI   Ich bin auf der Ansichtsseite
 WENN          ich möchte einen Dörrauftrag bearbeiten ("Auftrag bearbeiten")
 DANN          öffnet sich ein Eingabefenster um den ausgewählten Auftrag zu bearbeiten.
@@ -144,6 +151,30 @@ DANN          öffnet sich ein Eingabefenster um den ausgewählten Auftrag zu be
 GEGEBEN SEI   Ich bearbeite gerade einen Dörrauftrag
 WENN          ich fertig mit der Bearbeitung bin
 DANN          können die Daten in der Datenbank gespeichert ("Änderungen speichern") oder der Vorgang abgebrochen werden.
+```
+
+```
+GEGEBEN SEI   Ich bearbeite oder erstelle einen Dörrauftrag
+WENN          ich keinen Vornamen oder Nachnamen angebe, oder er andere Zeichen als Buchstaben enthält 
+DANN          wird mir die entsprechende Fehlermeldung zurückgemeldet.
+```
+
+```
+GEGEBEN SEI   Ich bearbeite oder erstelle einen Dörrauftrag
+WENN          ich keine Email Adresse angebe, oder dieser ein @ oder ein danach . fehlt
+DANN          wird mir die entsprechende Fehlermeldung zurückgemeldet.
+```
+
+```
+GEGEBEN SEI   Ich bearbeite oder erstelle einen Dörrauftrag
+WENN          ich in der Telefonnummer andere Zeichen als Zahlen und Leerschläge verwende, jedoch darf ein + am Anfang stehen
+DANN          wird mir die entsprechende Fehlermeldung zurückgemeldet.
+```
+
+```
+GEGEBEN SEI   Ich bearbeite oder erstelle einen Dörrauftrag
+WENN          ich keine Frucht oder keine Menge auswähle
+DANN          wird mir die entsprechende Fehlermeldung zurückgemeldet.
 ```
 
 <a name="Roadmap"/>
