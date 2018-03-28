@@ -141,7 +141,8 @@
 		<mat-checkbox *ngIf="!isCreate" [(ngModel)]="!parchOrder.isDone" name="isDone">Ist fertig</mat-checkbox>
 	</fieldset>
 
+	<br>
 
-	<button type="submit" mat-raised-button>Submit</button>
+	<button type="submit" mat-raised-button>{{(isCreate)?'Bestelling Erstellen':'Änderungen Speichern'}}</button>
 
 </form>
