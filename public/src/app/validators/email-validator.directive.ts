@@ -9,7 +9,7 @@ export class EmailValidatorDirective implements Validator {
 
 	validate(control: AbstractControl): { [key: string]: any } {
 		let val = (control.value) ? control.value.trim() : "";
-		return (/^\w+[@]\w+[.]\w{2,}$/.test(val)) ? null : {'emailValidator': {value: control.value}};
+		return (/^.+[@].+[.].{2,}$/.test(val)) ? null : {'emailValidator': {value: control.value}};
 	}
 
 

@@ -26,7 +26,7 @@ class ValidationHelper
 
 	public static function isEmail($str)
 	{
-		preg_match("/^\w+[@]\w+[.]\w{2,}$/", $str, $matches);
+		preg_match("/^.+[@].+[.].{2,}$/", $str, $matches);
 		return sizeof($matches) > 0;
 
 	}
